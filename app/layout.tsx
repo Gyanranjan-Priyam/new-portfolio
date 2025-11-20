@@ -16,7 +16,6 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import DockBar from "./_components/DockBar";
-import MenuBar from "./_components/MenuBar";
 import ClickSpark from "@/components/ClickSpark";
 
 const geistSans = Geist({
@@ -112,7 +111,6 @@ export default function RootLayout({
             sparkCount={8}
             duration={400}
           >
-            <MenuBar />
             <DockBar />
             {children}
           </ClickSpark>

@@ -3,9 +3,7 @@
 import { useState, useRef } from "react";
 import AnimateLoader from "@/components/Loader";
 import HeroSection from "./_components/HeroSection";
-import AboutPage from "./about/page";
 import LoaderCounter from "@/components/LoaderCounter";
-import ProjectsPage from "./projects/page";
 import HomeProjectsPage from "./_components/Projects";
 import HomeAboutPage from "./_components/About";
 

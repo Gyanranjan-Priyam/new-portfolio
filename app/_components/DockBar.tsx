@@ -1,7 +1,6 @@
 "use client";
 
 import { Dock, DockIcon } from "@/components/ui/dock";
-import { MenuDock } from "@/components/ui/shadcn-io/menu-dock";
 import {
   Tooltip,
   TooltipContent,
@@ -9,10 +8,6 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 import {
-  Home,
-  User,
-  FolderOpen,
-  Mail,
   Github,
   Linkedin,
   Twitter,
@@ -84,8 +79,6 @@ export default function DockBar() {
           iconMagnification={84}
           iconDistance={140}
         >
-          <div className="h-8 w-px bg-border/50 mx-2" />
-
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
