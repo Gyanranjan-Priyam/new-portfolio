@@ -41,7 +41,6 @@ export default function HomeAboutPage() {
             end: "+=400%",
             pin: true,
             scrub: 1,
-            markers: true,
           },
         }).fromTo(spanRef.current, {
           x: viewportWidth * 0.05,
