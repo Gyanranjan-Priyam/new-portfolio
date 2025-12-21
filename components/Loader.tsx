@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -11,6 +12,7 @@ interface AnimateLoaderProps {
 
 export default function AnimateLoader({ onComplete }: AnimateLoaderProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
@@ -79,7 +81,7 @@ export default function AnimateLoader({ onComplete }: AnimateLoaderProps) {
     });
 
     // 3. Exit Elements
-    tl.to([textRef.current, counterRef.current, barRef.current], {
+    tl.to([logoRef.current, textRef.current, counterRef.current, barRef.current], {
       opacity: 0,
       y: -20,
       stagger: 0.1,
@@ -95,6 +97,18 @@ export default function AnimateLoader({ onComplete }: AnimateLoaderProps) {
       className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999] text-white"
     >
       <div className="w-[300px] md:w-[400px] flex flex-col gap-4">
+        {/* Logo */}
+        <div ref={logoRef} className="flex justify-center mb-4">
+          <Image 
+            src="/logo.png" 
+            alt="Logo" 
+            width={100} 
+            height={100} 
+            className="object-contain"
+            priority
+          />
+        </div>
+
         {/* Dynamic Text */}
         <div 
           ref={textRef}
