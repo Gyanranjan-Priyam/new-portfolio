@@ -12,6 +12,8 @@ import {
   Linkedin,
   Twitter,
   Instagram,
+  Download,
+  FileUser,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -99,7 +101,7 @@ export default function DockBar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/gyanranjan-priyam"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -144,6 +146,22 @@ export default function DockBar() {
             </TooltipTrigger>
             <TooltipContent side="top" sideOffset={15}>
               <p>Instagram</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <DockIcon className="hover:-translate-y-2 transition-all duration-300 ease-out">
+                  <FileUser className="w-6 h-6 transition-transform duration-300 hover:scale-110" />
+                </DockIcon>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="top" sideOffset={15}>
+              <p>Resume</p>
             </TooltipContent>
           </Tooltip>
         </Dock>

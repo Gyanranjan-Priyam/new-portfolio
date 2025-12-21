@@ -138,8 +138,8 @@ export function HyperText({
         {displayText.map((letter, index) => (
           <motion.span
             key={index}
-            className={cn("font-mono", letter === " " ? "w-3" : "")}
-            style={{ fontFamily: "var(--font-accent)" }}
+            className={cn(letter === " " ? "w-3" : "")}
+            style={{ fontFamily: "var(--font-a)" }}
           >
             {letter.toUpperCase()}
           </motion.span>

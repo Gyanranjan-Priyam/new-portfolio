@@ -21,7 +21,7 @@ export default function LoaderCounter({ onComplete }: LoaderCounterProps) {
         <CountUp
           from={0}
           to={100}
-          duration={2}
+          duration={5}
           className="text-2xl font-bold text-foreground"
           onEnd={handleCountEnd}
         />

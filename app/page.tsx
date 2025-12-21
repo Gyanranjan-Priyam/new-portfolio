@@ -6,6 +6,8 @@ import HeroSection from "./_components/HeroSection";
 import LoaderCounter from "@/components/LoaderCounter";
 import HomeProjectsPage from "./_components/Projects";
 import HomeAboutPage from "./_components/About";
+import Contact from "./_components/Contact";
+import Footer from "./_components/Footer";
 
 
 export default function Home() {
@@ -23,7 +25,7 @@ export default function Home() {
     setTimeout(() => {
       setShowLoader(false);
       setIsLoading(false);
-    }, 800);
+    }, 1000);
   };
 
   return (
@@ -40,6 +42,8 @@ export default function Home() {
         <HeroSection />
         <HomeAboutPage />
         <HomeProjectsPage />
+        <Contact />
+        <Footer />
       </div>
     </>
   );

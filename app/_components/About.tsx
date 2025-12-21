@@ -1,124 +1,137 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
-import { motion } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import Image from "next/image";
+import { Code2, Palette, Rocket, ArrowUpRight, Trophy, FileUser } from "lucide-react";
 import { HyperText } from "@/components/ui/hyper-text";
-import { WordRotate } from "@/components/ui/word-rotate";
-import LogoLoop from "@/components/LogoLoop";
 import { Tooltip } from "@/components/ui/tooltip-card";
-import ChromaGrid from "@/components/ChromaGrid";
 
-const items = [
-  {
-    image: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1763650481/zb9w1qqtmajfq8k12uuz.jpg",
-    title: "Gyanranjan Priyam",
-    subtitle: "Frontend Developer",
-    handle: "@gyanranjanpriyam",
-    borderColor: "#3B82F6",
-    gradient: "linear-gradient(145deg, #3B82F6, #000)",
-    url: "https://github.com/gyanranjan-priyam",
-  },
-];
+gsap.registerPlugin(ScrollTrigger);
 
-export default function HomeAboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const spanRef = useRef<HTMLSpanElement>(null);
+export default function About() {
+  const container = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
+  useGSAP(() => {
+    // 1. Title Reveal Animation
+    const titles = gsap.utils.toArray<HTMLElement>('.reveal-text');
+    titles.forEach((title) => {
+      gsap.fromTo(title, 
+        { y: 100, opacity: 0, rotateX: -20 },
+        {
+          y: 0,
+          opacity: 1,
+          rotateX: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: title,
+            start: "top 90%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    // 2. Image Parallax & Scale
+    if (imageRef.current) {
+      gsap.fromTo(imageRef.current.querySelector("img"), 
+        { scale: 1.2, yPercent: -10 },
+        {
+          scale: 1,
+          yPercent: 10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        }
+      );
     }
 
-    requestAnimationFrame(raf);
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    if (!containerRef.current || !spanRef.current) return;
-
-    const ctx = gsap.context(() => {
-      if (containerRef.current && spanRef.current) {
-        const spanWidth = spanRef.current.offsetWidth;
-        const viewportWidth = window.innerWidth;
-
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top top",
-              end: "+=400%",
-              pin: true,
-              scrub: 1,
-            },
-          })
-          .fromTo(
-            spanRef.current,
-            {
-              x: viewportWidth * 0.05,
-            },
-            {
-              x: -spanWidth + viewportWidth * 0.5,
-              ease: "none",
-            }
-          );
+    // 3. Skills Grid Stagger
+    gsap.from(".skill-card", {
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".skills-grid",
+        start: "top 80%",
       }
-    }, containerRef);
+    });
 
-    return () => {
-      ctx.revert();
-      lenis.destroy();
-    };
-  }, []);
+    // 4. Divider Line Animation
+    gsap.utils.toArray<HTMLElement>('.divider-line').forEach(line => {
+      gsap.fromTo(line,
+        { scaleX: 0, transformOrigin: "left center" },
+        {
+          scaleX: 1,
+          duration: 1.5,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: line,
+            start: "top 85%",
+          }
+        }
+      );
+    });
+
+  }, { scope: container });
 
   return (
-    <>
-      <div
-        ref={containerRef}
-        className="relative h-screen overflow-hidden bg-background"
-      >
-        <div className="flex items-center justify-start h-screen pl-[5vw]">
-          <h1 ref={headingRef} className="whitespace-nowrap ">
-            <span
-              ref={spanRef}
-              className="text-[45vw] font-bold inline-block "
-              style={{ fontFamily: "var(--font-accent)" }}
-            >
-              About Me
-            </span>
-          </h1>
-        </div>
-      </div>
-      <div className="min-h-screen bg-white flex flex-1 justify-start p-8 pl-16">
-        <motion.div className="relative flex flex-col items-start justify-center max-w-2xl">
-          <div className="flex items-start justify-start gap-2">
-            <WordRotate
-              className="text-4xl font-bold text-left text-black"
-              style={{ fontFamily: "var(--font-accent)" }}
-              words={[
-                "नमस्ते",
-                "Hello",
-                "Hola",
-                "Bonjour",
-                "Hallo",
-                "Ciao",
-                "Olá",
-                "안녕하세요",
-              ]}
-            />
+    <section id="about" ref={container} className="relative w-full bg-black text-white py-24 sm:py-32 overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12">
+        
+        {/* Header Section */}
+        <div className="mb-7 md:mb-10">
+          <div className="overflow-hidden">
+            <h1 className="text-5xl md:text-7xl lg:text-5xl font-bold leading-[0.9] tracking-tight reveal-text" style={{ fontFamily: "var(--font-a" }}>
+              About <span className="text-white/50">the</span>
+            </h1>
           </div>
-          <div
-            className="text-sm text-black text-left sm:text-base md:text-lg lg:text-xl xl:text-xl leading-relaxed space-y-1 mt-4"
+          <div className="overflow-hidden">
+            <HyperText 
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight reveal-text" 
+            style={{ fontFamily: "var(--font-a" }}> 
+              Developer.
+            </HyperText>
+          </div>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          
+          {/* Left Column: Image */}
+          <div className="col-span-1 lg:col-span-5 relative">
+            <div ref={imageRef} className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-neutral-900 image-container">
+              <Image
+                src="https://res.cloudinary.com/dw47ib0sh/image/upload/v1763650481/zb9w1qqtmajfq8k12uuz.jpg"
+                alt="Gyanranjan Priyam"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
+            <div className="mt-6 flex justify-between items-center text-sm text-white/60 font-mono">
+              <span>..................</span>
+              <span>BASED IN INDIA</span>
+            </div>
+          </div>
+
+          {/* Right Column: Bio & Stats */}
+          <div className="col-span-1 lg:col-span-7 flex flex-col justify-between h-full">
+            <div className="space-y-8">
+              <div className="h-px w-full bg-white/20 divider-line" />
+              <div
+            className="text-sm text-white text-left sm:text-base md:text-lg lg:text-xl xl:text-xl leading-relaxed space-y-1 mt-4"
             style={{ fontFamily: "var(--font-accent)" }}
           >
             <span className="flex text-left items-center justify-start gap-4">
@@ -138,10 +151,10 @@ export default function HomeAboutPage() {
               back-end technologies.
             </span>
           </div>
-          <div className="flex flex-col mt-15">
+          <div className="flex flex-col">
             <span
-              className="text-black"
-              style={{ fontFamily: "var(--font-accent)" }}
+              className="text-white"
+              style={{ fontFamily: "var(--font-a)" }}
             >
               <p className="text-xl font-bold mb-3 underline">
                 Educational Background And achivements
@@ -149,21 +162,21 @@ export default function HomeAboutPage() {
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 I had completed my{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400  cursor-pointer"
+                  containerClassName="text-white  cursor-pointer"
                   content="Intermediate Completed from Divine HSS, Nayagarh, Odisha with 85 percentage mark from Science stream under CHSE Board."
                 >
                   <span className="font-bold">intermediate</span>
                 </Tooltip>{" "}
                 with first division and also topper of the{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400  cursor-pointer"
+                  containerClassName="text-white  cursor-pointer"
                   content="Divine Higher Secondary School, Nayagarh Odisha"
                 >
                   <span className="font-bold">College</span>
                 </Tooltip>{" "}
                 in 2020. Currently, I am pursuing my{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400  cursor-pointer"
+                  containerClassName="text-white  cursor-pointer"
                   content="Bachelor of Technology in Electrical Engineering from Government College of Engineering, Kalahandi, Bhawanipatna, Odisha under BPUT University."
                 >
                   <span className="font-bold">B.Tech</span>
@@ -171,7 +184,7 @@ export default function HomeAboutPage() {
                 from Government College of Engineering, Kalahandi. I have also
                 achieved{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400  cursor-pointer"
+                  containerClassName="text-white  cursor-pointer"
                   content="Secured 2nd position in District Level Science Exhibition held at Nayagarh in 2019."
                 >
                   <span className="font-bold">various prizes</span>
@@ -179,7 +192,7 @@ export default function HomeAboutPage() {
                 in the field of science and technology during my school and
                 college time. Also I have achived various State level{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400"
+                  containerClassName="text-white  cursor-pointer"
                   content=" Awarded Meritious Scholarships by the Government of Odisha for academic excellence in 2015 and 2016. Along with this I have also get NRTS Scholarship for the year 2019."
                 >
                   <span className="cursor-pointer font-bold">
@@ -188,7 +201,7 @@ export default function HomeAboutPage() {
                 </Tooltip>{" "}
                 and{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400"
+                  containerClassName="text-white  cursor-pointer"
                   content=" Awarded 1st Prize in Quiz District Level held at Nayagarh in 2018."
                 >
                   <span className="cursor-pointer font-bold">Prizes</span>
@@ -197,8 +210,8 @@ export default function HomeAboutPage() {
               </p>
             </span>
             <span
-              className="text-black mt-10"
-              style={{ fontFamily: "var(--font-accent)" }}
+              className="text-white mt-10"
+              style={{ fontFamily: "var(--font-a)" }}
             >
               <p className="text-xl font-bold mb-3 underline">
                 Hobbies and Interest
@@ -206,14 +219,14 @@ export default function HomeAboutPage() {
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 My hobbies include{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400 cursor-pointer"
+                  containerClassName="text-white cursor-pointer"
                   content="I enjoy reading a wide range of books that help me expand my imagination, improve my thinking, and gain new perspectives."
                 >
                   <span className="font-bold">reading books</span>
                 </Tooltip>{" "}
                 and{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400 cursor-pointer"
+                  containerClassName="text-white cursor-pointer"
                   content="I love building websites, learning new web technologies, and improving my development skills through hands-on projects."
                 >
                   <span className="font-bold">web development</span>
@@ -225,7 +238,7 @@ export default function HomeAboutPage() {
                 <br />
                 <br />I also have a strong interest in{" "}
                 <Tooltip
-                  containerClassName="text-neutral-600 dark:text-neutral-400 cursor-pointer"
+                  containerClassName="text-white cursor-pointer"
                   content="I am passionate about exploring new topics, learning about emerging fields, and conducting research to expand my understanding."
                 >
                   <span className="font-bold">research</span>
@@ -236,73 +249,51 @@ export default function HomeAboutPage() {
               </p>
             </span>
           </div>
-        </motion.div>
-      <div className="flex flex-2 items-center justify-center p-8 pr-10 mb-50">
-        <div style={{ height: "600px", width: "600px", position: "absolute" }}>
-          <ChromaGrid
-            items={items}
-            radius={300}
-            damping={0.45}
-            fadeOut={0.6}
-            ease="power3.out"
-          />
+
+              <div className="pt-8">
+                <a 
+                  href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-lg font-medium text-white hover:text-white/80 transition-colors reveal-text"
+                >
+                <FileUser className="w-5 h-5" />
+                  Download Resume
+                  <ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Tech Stack / Logo Loop */}
+        <div className="mt-32 border-t border-white/10 pt-16">
+           <p className="text-center text-sm text-white/40 uppercase tracking-widest mb-12 reveal-text">Technologies & Tools</p>
+           <div className="opacity-60 hover:opacity-100 transition-opacity duration-500">
+             <div className="flex overflow-hidden whitespace-nowrap py-4 mask-image-gradient">
+                <div className="flex animate-marquee gap-16 items-center">
+                   {["React", "Next.js", "TypeScript", "GSAP", "Node.js", "GraphQL", "AWS", "Tailwind", "Figma", "Three.js", "WebGL"].map((tech, i) => (
+                      <span key={i} className="text-2xl md:text-4xl font-bold text-white/20 uppercase font-mono">{tech}</span>
+                   ))}
+                   {["React", "Next.js", "TypeScript", "GSAP", "Node.js", "GraphQL", "AWS", "Tailwind", "Figma", "Three.js", "WebGL"].map((tech, i) => (
+                      <span key={`dup-${i}`} className="text-2xl md:text-4xl font-bold text-white/20 uppercase font-mono">{tech}</span>
+                   ))}
+                </div>
+             </div>
+           </div>
+        </div>
+
       </div>
-      </div>
-      <div className="w-full bg-white py-5">
-        <LogoLoop
-          logos={[
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-              alt: "React",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-              alt: "Next.js",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-              alt: "TypeScript",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-              alt: "JavaScript",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-              alt: "Node.js",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-              alt: "Express",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-              alt: "MongoDB",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-              alt: "Tailwind CSS",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-              alt: "Git",
-            },
-            {
-              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-              alt: "AWS",
-            },
-          ]}
-          speed={100}
-          direction="left"
-          logoHeight={48}
-          gap={48}
-          pauseOnHover
-          scaleOnHover
-          fadeOut
-          fadeOutColor="#ffffff"
-        />
-      </div>
-    </>
+      
+      <style jsx global>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+      `}</style>
+    </section>
   );
 }

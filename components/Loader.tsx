@@ -1,125 +1,122 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
-import { Flip } from "gsap/Flip";
+import { useGSAP } from "@gsap/react";
+import { TextPlugin } from "gsap/TextPlugin";
 
 interface AnimateLoaderProps {
   onComplete?: () => void;
 }
 
 export default function AnimateLoader({ onComplete }: AnimateLoaderProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const counterRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(Flip);
+  useGSAP(() => {
+    gsap.registerPlugin(TextPlugin);
 
-    const letters = gsap.utils.toArray<HTMLDivElement>(".letter");
-    const container = containerRef.current;
-
-    if (!container) return;
-
-    // Initial animation - letters come together
-    gsap.fromTo(
-      letters,
-      {
-        opacity: 0,
-        scale: 0,
-        rotation: gsap.utils.wrap([90, -90, 180, -180]),
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-      }
-    );
-
-    // Flip animation loop
-    const animate = () => {
-      // Get current state
-      const state = Flip.getState(letters);
-
-      // Randomly shuffle letters
-      letters.forEach((letter) => {
-        const randomX = gsap.utils.random(-50, 50);
-        const randomY = gsap.utils.random(-50, 50);
-        gsap.set(letter, { x: randomX, y: randomY });
-      });
-
-      // Animate to new positions
-      Flip.from(state, {
-        duration: 1,
-        ease: "power2.inOut",
-        stagger: 0.05,
-        onComplete: () => {
-          // Reset positions
-          const resetState = Flip.getState(letters);
-          gsap.set(letters, { x: 0, y: 0 });
-          
-          Flip.from(resetState, {
-            duration: 1,
-            ease: "power2.inOut",
-            stagger: 0.05,
-            delay: 0.5,
-            onComplete: animate,
-          });
-        },
-      });
-    };
-
-    // Start animation loop after initial animation
-    const timer = setTimeout(() => {
-      animate();
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer);
-      gsap.killTweensOf(letters);
-    };
-  }, []);
-
-  const animateOut = () => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-
-    gsap.to(wrapper, {
-      y: "-100%",
-      duration: 0.8,
-      ease: "power3.inOut",
+    const tl = gsap.timeline({
       onComplete: () => {
-        if (onComplete) onComplete();
+        gsap.to(wrapperRef.current, {
+          yPercent: -100,
+          duration: 0.8,
+          ease: "power4.inOut",
+          onComplete: onComplete
+        });
       }
     });
-  };
 
-  // Expose animateOut for parent to call
-  useEffect(() => {
-    if (containerRef.current) {
-      (containerRef.current as any).animateOut = animateOut;
-    }
-  }, []);
+    // Initial State
+    gsap.set(barRef.current, { scaleX: 0 });
+
+    // 1. Progress Bar & Counter (Base Timeline)
+    tl.to(barRef.current, {
+      scaleX: 1,
+      duration: 5,
+      ease: "expo.inOut",
+      transformOrigin: "left"
+    }, 0);
+
+    const counterObj = { value: 0 };
+    tl.to(counterObj, {
+      value: 100,
+      duration: 5,
+      ease: "expo.inOut",
+      onUpdate: () => {
+        if (counterRef.current) {
+          counterRef.current.textContent = Math.floor(counterObj.value).toString().padStart(3, '0') + "%";
+        }
+      }
+    }, 0);
+
+    // 2. Text Replacement Sequence
+    // We use TextPlugin to swap words with a "scramble-like" feel by changing them quickly
+    const textTl = gsap.timeline();
+    
+    // Start with "INITIALIZING"
+    textTl.to(textRef.current, {
+      text: { value: "GATHERING ASSETS", delimiter: "" },
+      duration: 1.2,
+      ease: "none",
+      delay: 0.5
+    });
+    
+    textTl.to(textRef.current, {
+      text: { value: "COMPILING DATA", delimiter: "" },
+      duration: 1.2,
+      ease: "none",
+      delay: 0.8
+    });
+
+    textTl.to(textRef.current, {
+      text: { value: "READY TO LAUNCH", delimiter: "" },
+      duration: 1.2,
+      ease: "none",
+      delay: 0.8
+    });
+
+    // 3. Exit Elements
+    tl.to([textRef.current, counterRef.current, barRef.current], {
+      opacity: 0,
+      y: -20,
+      stagger: 0.1,
+      duration: 0.5,
+      ease: "power2.in"
+    }, "-=0.5");
+
+  }, { scope: wrapperRef });
 
   return (
     <div 
       ref={wrapperRef}
-      className="fixed inset-0 flex items-center justify-center bg-background z-50"
+      className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999] text-white"
     >
-      <div
-        ref={containerRef}
-        className="flex gap-2 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold"
-        style={{ fontFamily: "var(--font-accent)" }}
-      >
-        <div className="letter">L</div>
-        <div className="letter">o</div>
-        <div className="letter">a</div>
-        <div className="letter">d</div>
-        <div className="letter">i</div>
-        <div className="letter">n</div>
-        <div className="letter">g</div>
+      <div className="w-[300px] md:w-[400px] flex flex-col gap-4">
+        {/* Dynamic Text */}
+        <div 
+          ref={textRef}
+          className="text-xl md:text-2xl font-bold tracking-widest text-center h-8"
+          style={{ fontFamily: "var(--font-accent)" }}
+        >
+          INITIALIZING
+        </div>
+
+        {/* Progress Bar Container */}
+        <div className="relative h-[2px] w-full bg-white/10 overflow-hidden">
+          <div 
+            ref={barRef}
+            className="absolute inset-0 bg-white origin-left"
+          />
+        </div>
+
+        {/* Counter */}
+        <div className="flex justify-between items-center text-xs font-mono text-white/50">
+          <span>SYSTEM STATUS</span>
+          <span ref={counterRef}>000%</span>
+        </div>
       </div>
     </div>
   );
