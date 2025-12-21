@@ -90,13 +90,13 @@ export default function HeroSection() {
             <div className="flex items-center gap-3 text-xl font-medium text-white/80 md:text-2xl">
                <span className="h-px w-8 bg-white/60" />
                <WordRotate
-                className="font-bold text-3xl text-white"
+                className="font-bold text-5xl text-white"
                 style={{ fontFamily: "var(--font-a)" }}
                 words={["Hello", "नमस्ते", "Hola", "Bonjour", "Ciao", "Olá", "안녕하세요"]}
               />
             </div>
 
-            <div className="max-w-lg font-bold text-base leading-relaxed text-white/70 md:text-lg" style={{ fontFamily: "var(--font-u)" }}>
+            <div className="max-w-lg ml-11 font-bold text-base leading-relaxed text-white/70 md:text-lg" style={{ fontFamily: "var(--font-u)" }}>
               <p>
                 I&apos;m <span className="font-bold text-white">Priyam</span>, a software developer focused on building seamless, efficient, and user-centric digital experiences across the full stack.
               </p>
