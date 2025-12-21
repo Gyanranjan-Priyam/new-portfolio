@@ -33,8 +33,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-svh w-full overflow-hidden bg-black text-white">
-      {/* Logo & Name (Mobile Header) */}
-      <div className="absolute top-6 left-6 z-50 flex items-center gap-3 md:top-8 md:left-8">
+      {/* Logo (Mobile & Desktop) */}
+      <div className="absolute top-6 left-6 z-50 md:top-8 md:left-8">
         <Image
           src="/logo.png"
           alt="Logo"
@@ -43,14 +43,16 @@ export default function HeroSection() {
           className="w-10 h-10 md:w-12 md:h-12 object-contain"
           priority
         />
-        <div className="flex flex-col md:hidden">
-          <span className="text-lg font-bold tracking-widest text-white leading-none" style={{ fontFamily: "var(--font-mokoto)" }}>
-            GYANRANJAN
-          </span>
-          <span className="text-xs tracking-[0.2em] text-white/60 leading-none mt-1">
-            PRIYAM
-          </span>
-        </div>
+      </div>
+
+      {/* Name (Mobile Only - Right Corner) */}
+      <div className="absolute top-6 right-6 z-50 flex flex-col items-end md:hidden">
+        <span className="text-lg font-bold tracking-widest text-white leading-none" style={{ fontFamily: "var(--font-mokoto)" }}>
+          GYANRANJAN
+        </span>
+        <span className="text-sm font-bold tracking-[0.2em] text-white/60 leading-none mt-1 " style={{ fontFamily: "var(--font-mokoto)" }}>
+          PRIYAM
+        </span>
       </div>
 
       {/* Background Layer */}
@@ -90,8 +92,8 @@ export default function HeroSection() {
               words={["Hello", "नमस्ते", "Hola", "Bonjour", "Ciao", "Olá", "안녕하세요"]}
             />
           </div>
-          <p className="text-lg font-medium leading-relaxed text-white/80" style={{ fontFamily: "var(--font-u)" }}>
-            I&apos;m <span className="text-white font-bold">Priyam</span>. I build digital experiences that matter.
+          <p className="text-sm font-medium leading-relaxed text-white/80" style={{ fontFamily: "var(--font-u)" }}>
+            I&apos;m <span className="text-white font-bold">Priyam</span>.  a software developer focused on building seamless, efficient, and user-centric digital experiences across the full stack.
           </p>
 
           <div className="flex items-end justify-between border-t border-white/10 pt-6 mt-2">
