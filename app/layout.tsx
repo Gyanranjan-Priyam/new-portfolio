@@ -100,11 +100,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
+  const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Gyanranjan Priyam",
     "url": "https://www.gyanranjanpriyam.tech",
+    "image": "https://www.gyanranjanpriyam.tech/logo.png",
     "sameAs": [
       "https://linkedin.com/in/gyanranjan-priyam",
       "https://github.com/Gyanranjan-Priyam",
@@ -119,6 +120,26 @@ export default function RootLayout({
     "description": "Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies."
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gyanranjan Priyam",
+    "url": "https://www.gyanranjanpriyam.tech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.gyanranjanpriyam.tech/logo.png",
+      "width": "512",
+      "height": "512"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/gyanranjan-priyam",
+      "https://github.com/Gyanranjan-Priyam",
+      "https://x.com/gr_priyam",
+      "https://instagram.com/gyanranjanpriyam"
+    ],
+    "description": "Portfolio of Gyanranjan Priyam - Full Stack Developer specializing in modern web technologies."
+  };
+
   return (
     <html className="dark" lang="en" suppressHydrationWarning>
       <body
@@ -126,7 +147,11 @@ export default function RootLayout({
       >
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
           />
           <MobileBlocker />
           <ClickSpark
