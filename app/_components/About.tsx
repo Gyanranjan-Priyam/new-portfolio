@@ -162,21 +162,21 @@ export default function About() {
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 I had completed my{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-pointer"
+                  containerClassName="text-white  cursor-target"
                   content="Intermediate Completed from Divine HSS, Nayagarh, Odisha with 85 percentage mark from Science stream under CHSE Board."
                 >
                   <span className="font-bold">intermediate</span>
                 </Tooltip>{" "}
                 with first division and also topper of the{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-pointer"
+                  containerClassName="text-white  cursor-target"
                   content="Divine Higher Secondary School, Nayagarh Odisha"
                 >
                   <span className="font-bold">College</span>
                 </Tooltip>{" "}
                 in 2020. Currently, I am pursuing my{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-pointer"
+                  containerClassName="text-white  cursor-target"
                   content="Bachelor of Technology in Electrical Engineering from Government College of Engineering, Kalahandi, Bhawanipatna, Odisha under BPUT University."
                 >
                   <span className="font-bold">B.Tech</span>
@@ -184,7 +184,7 @@ export default function About() {
                 from Government College of Engineering, Kalahandi. I have also
                 achieved{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-pointer"
+                  containerClassName="text-white  cursor-target"
                   content="Secured 2nd position in District Level Science Exhibition held at Nayagarh in 2019."
                 >
                   <span className="font-bold">various prizes</span>
@@ -192,19 +192,19 @@ export default function About() {
                 in the field of science and technology during my school and
                 college time. Also I have achived various State level{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-pointer"
+                  containerClassName="text-white  cursor-target"
                   content=" Awarded Meritious Scholarships by the Government of Odisha for academic excellence in 2015 and 2016. Along with this I have also get NRTS Scholarship for the year 2019."
                 >
-                  <span className="cursor-pointer font-bold">
+                  <span className="cursor-target font-bold">
                     Meritious Scholarships
                   </span>
                 </Tooltip>{" "}
                 and{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-pointer"
+                  containerClassName="text-white  cursor-target"
                   content=" Awarded 1st Prize in Quiz District Level held at Nayagarh in 2018."
                 >
-                  <span className="cursor-pointer font-bold">Prizes</span>
+                  <span className="cursor-target font-bold">Prizes</span>
                 </Tooltip>{" "}
                 during my academic career.
               </p>
@@ -219,14 +219,14 @@ export default function About() {
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 My hobbies include{" "}
                 <Tooltip
-                  containerClassName="text-white cursor-pointer"
+                  containerClassName="text-white cursor-target"
                   content="I enjoy reading a wide range of books that help me expand my imagination, improve my thinking, and gain new perspectives."
                 >
                   <span className="font-bold">reading books</span>
                 </Tooltip>{" "}
                 and{" "}
                 <Tooltip
-                  containerClassName="text-white cursor-pointer"
+                  containerClassName="text-white cursor-target"
                   content="I love building websites, learning new web technologies, and improving my development skills through hands-on projects."
                 >
                   <span className="font-bold">web development</span>
@@ -238,7 +238,7 @@ export default function About() {
                 <br />
                 <br />I also have a strong interest in{" "}
                 <Tooltip
-                  containerClassName="text-white cursor-pointer"
+                  containerClassName="text-white cursor-target"
                   content="I am passionate about exploring new topics, learning about emerging fields, and conducting research to expand my understanding."
                 >
                   <span className="font-bold">research</span>
@@ -255,7 +255,7 @@ export default function About() {
                   href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-lg font-medium text-white hover:text-white/80 transition-colors reveal-text"
+                  className="group inline-flex items-center cursor-target gap-2 text-lg font-medium text-white hover:text-white/80 transition-colors reveal-text"
                 >
                 <FileUser className="w-5 h-5" />
                   Download Resume

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Instagram, ArrowUp } from "lucide-react";
+import Image from "next/image";
+
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -41,7 +43,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
           
           {/* Brand Column */}
+          
           <div className="md:col-span-2 space-y-6">
+            <div>
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={80}
+                height={80}
+                className="w-12 h-12 object-contain"
+                priority
+              />
+            </div>
             <h2 className="text-2xl font-bold tracking-widest" style={{ fontFamily: "var(--font-mokoto)" }}>
               Gyanranjan Priyam
             </h2>
@@ -62,7 +75,7 @@ export default function Footer() {
                   <Link 
                     href={link.href} 
                     onClick={(e) => handleScroll(e, link.href)}
-                    className="text-white/60 hover:text-white transition-colors"
+                    className="text-white/60 cursor-target hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -76,7 +89,7 @@ export default function Footer() {
             <h3 className="text-sm font-medium uppercase tracking-wider text-white/40 mb-6">
               Socials
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 ">
               {socialLinks.map((social) => (
                 <li key={social.name}>
                   <Link 
@@ -101,7 +114,7 @@ export default function Footer() {
 
           <button 
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+            className="group flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors cursor-target"
           >
             Back to Top
             <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">

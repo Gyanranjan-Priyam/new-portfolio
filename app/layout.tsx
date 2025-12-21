@@ -8,6 +8,7 @@ import "./globals.css";
 import DockBar from "./_components/DockBar";
 import ClickSpark from "@/components/ClickSpark";
 import MobileBlocker from "./_components/MobileBlocker";
+import TargetCursor from "@/components/TargetCursor";
 
 const urbanist = Urbanist({
   variable: "--font-u",
@@ -139,6 +140,7 @@ export default function RootLayout({
             duration={400}
           >
             <DockBar />
+            <TargetCursor/>
             {children}
           </ClickSpark>
       </body>

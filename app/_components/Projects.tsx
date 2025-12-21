@@ -165,11 +165,11 @@ export default function Projects() {
                 </div>
 
                 <div className="flex items-center gap-6 mt-12">
-                  <Link href={project.github} target="_blank" className="group flex items-center gap-3 px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors">
+                  <Link href={project.github} target="_blank" className="group flex items-center gap-3 px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors cursor-target">
                     <Github className="w-5 h-5" />
                     <span>GitHub</span>
                   </Link>
-                  <Link href={project.link} target="_blank" className="group flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors">
+                  <Link href={project.link} target="_blank" className="group flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors cursor-target">
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     <span>Live Demo</span>
                   </Link>
