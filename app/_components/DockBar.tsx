@@ -12,7 +12,6 @@ import {
   Linkedin,
   Twitter,
   Instagram,
-  Download,
   FileUser,
 } from "lucide-react";
 import Link from "next/link";

@@ -105,8 +105,98 @@ export default function About() {
           </div>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        {/* --- MOBILE LAYOUT --- */}
+        <div className="flex flex-col gap-8 md:hidden">
+           {/* Mobile Image */}
+           <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src="https://res.cloudinary.com/dw47ib0sh/image/upload/v1763650481/zb9w1qqtmajfq8k12uuz.jpg"
+                alt="Gyanranjan Priyam"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+              {/* Overlay Info */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
+                 <div className="flex justify-between items-end">
+                    <div>
+                        <p className="text-xs font-mono text-white/60 mb-1">BASED IN INDIA</p>
+                        <h2 className="text-2xl font-bold text-white">Gyanranjan Priyam</h2>
+                    </div>
+                 </div>
+              </div>
+           </div>
+
+           {/* Mobile Bio */}
+           <div className="space-y-8">
+              <div className="space-y-4">
+                  <p className="text-lg text-white/90 leading-relaxed font-medium">
+                    I&apos;m <span className="text-white font-bold">Priyam</span>. An electrical engineering student and software developer focused on building seamless digital experiences.
+                  </p>
+                  <p className="text-sm text-white/60 leading-relaxed">
+                    I combine my engineering background with a passion for web technologies to create efficient, user-centric applications.
+                  </p>
+              </div>
+
+              {/* Cards for Sections */}
+              <div className="grid gap-4">
+                 <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="flex items-center gap-3 mb-4">
+                       <div className="p-2.5 bg-white/10 rounded-full"><Trophy className="w-5 h-5 text-white" /></div>
+                       <h3 className="font-bold text-white text-lg">Education</h3>
+                    </div>
+                    <ul className="space-y-3 text-sm text-neutral-400">
+                       <li className="flex gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 shrink-0" />
+                          <span>B.Tech in Electrical Engineering, GCE Kalahandi</span>
+                       </li>
+                       <li className="flex gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 shrink-0" />
+                          <span>Topper of Divine Higher Secondary School (2020)</span>
+                       </li>
+                       <li className="flex gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 shrink-0" />
+                          <span>Recipient of multiple merit scholarships</span>
+                       </li>
+                    </ul>
+                 </div>
+
+                 <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="flex items-center gap-3 mb-4">
+                       <div className="p-2.5 bg-white/10 rounded-full"><Rocket className="w-5 h-5 text-white" /></div>
+                       <h3 className="font-bold text-white text-lg">Interests</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                        {["Web Development", "Reading", "Research", "Technology", "Design"].map((tag) => (
+                            <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-white/80 border border-white/5">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <p className="mt-4 text-sm text-neutral-400 leading-relaxed">
+                       I enjoy exploring different genres of literature and continuously learning through reading and hands-on projects.
+                    </p>
+                 </div>
+              </div>
+
+              {/* Resume Button */}
+              <a 
+                  href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-5 bg-white text-black rounded-2xl font-bold hover:bg-neutral-200 transition-all active:scale-[0.98]"
+              >
+                  <span className="flex items-center gap-2">
+                    <FileUser className="w-5 h-5" />
+                    Download Resume
+                  </span>
+                  <ArrowUpRight className="w-5 h-5" />
+              </a>
+           </div>
+        </div>
+
+        {/* --- DESKTOP LAYOUT --- */}
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Left Column: Image */}
           <div className="col-span-1 lg:col-span-5 relative">

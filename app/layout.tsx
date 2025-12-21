@@ -162,7 +162,7 @@ export default function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
           />
-          <MobileBlocker />
+          {/* <MobileBlocker /> */}
           <ClickSpark
             sparkColor="#fff"
             sparkSize={10}
