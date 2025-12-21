@@ -27,7 +27,7 @@ const mokoto = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gyanranjanpriaym.tech"),
+  metadataBase: new URL("https://www.gyanranjanpriyam.tech"),
   title: {
     default: "Gyanranjan Priyam | Full Stack Developer",
     template: "%s | Gyanranjan Priyam"
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gyanranjanpriaym.tech",
+    url: "https://www.gyanranjanpriyam.tech",
     title: "Gyanranjan Priyam | Full Stack Developer",
     description: "Explore the portfolio of Gyanranjan Priyam, a Full Stack Developer crafting exceptional digital experiences with modern web technologies.",
     siteName: "Gyanranjan Priyam Portfolio",
@@ -104,7 +104,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Gyanranjan Priyam",
-    "url": "https://gyanranjanpriaym.tech",
+    "url": "https://www.gyanranjanpriyam.tech",
     "sameAs": [
       "https://linkedin.com/in/gyanranjan-priyam",
       "https://github.com/Gyanranjan-Priyam",
