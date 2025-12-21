@@ -1,12 +1,10 @@
 import { motion } from "motion/react";
 import { WordRotate } from "@/components/ui/word-rotate";
 import Image from "next/image";
-import { SpinningText } from "@/components/ui/spinning-text";
 import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "@/components/ui/scroll-based-velocity";
-import { ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -34,6 +32,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-svh w-full overflow-hidden bg-black text-white">
+      {/* Logo */}
+      <div className="absolute top-6 left-6 z-50 md:top-8 md:left-8">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={60}
+          height={60}
+          className="w-10 h-10 md:w-12 md:h-12 object-contain"
+          priority
+        />
+      </div>
+
       {/* Background Layer */}
       <div className="absolute inset-0">
         <Image
