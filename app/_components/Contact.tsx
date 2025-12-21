@@ -74,7 +74,7 @@ export default function Contact() {
                     onClick={handleCopyEmail}
                     className="text-xl md:text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3 group"
                   >
-                    contact@gyanranjanpriyam.tech
+                    contact.gyanranjan@gmail.com
                     <span className="relative">
                       <Copy className={`w-4 h-4 transition-all duration-300 ${copied ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}`} />
                       <Check className={`w-4 h-4 absolute top-0 left-0 text-green-400 transition-all duration-300 ${copied ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`} />
@@ -144,7 +144,7 @@ export default function Contact() {
 
               <button 
                 type="submit"
-                className="w-full bg-white text-black font-medium py-4 rounded-xl hover:bg-white/90 transition-colors flex items-center justify-center gap-2 group"
+                className="w-full bg-white text-black font-medium py-4 rounded-xl hover:bg-white/90 transition-colors cursor-target flex items-center justify-center gap-2 group"
               >
                 Send Message
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
