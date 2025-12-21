@@ -16,8 +16,8 @@ const projects = [
     description: "A comprehensive event management system handling thousands of participant registrations, real-time payments, and scheduling for a major technical festival.",
     tags: ["Next.js", "TypeScript", "AWS", "Prisma"],
     image: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1763639700/h4frc8kui8spiqqf6w0a.png",
-    github: "/",
-    link: "/",
+    github: "https://github.com/Gyanranjan-Priyam/insprano-dashboard",
+    link: "https://registration-insprano.vercel.app/login",
     color: "#18181b"
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     tags: ["Next.js", "Supabase", "AI Integration", "BetterAuth"],
     image: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1763639888/uwehpvwy3rmlaked0rog.png",
     github: "https://github.com/Gyanranjan-Priyam/jee-neet",
-    link: "/",
+    link: "https://jee-neet.vercel.app/",
     color: "#18181b"
   },
   {
