@@ -93,6 +93,11 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
+  verification: {
+    other: {
+      "msvalidate.01": "1178BCCD0F20BFE8F63DCAD6EAC35DB3",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -148,6 +153,10 @@ export default function RootLayout({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
           />
           <script
             type="application/ld+json"
