@@ -150,7 +150,7 @@ export default function DockBar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing"
+                href="https://drive.google.com/file/d/146Wlv6D7RSiyhqTOpYMDmZ0Ly2762A5P/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >

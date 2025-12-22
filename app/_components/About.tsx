@@ -181,7 +181,7 @@ export default function About() {
 
               {/* Resume Button */}
               <a 
-                  href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing" 
+                  href="https://drive.google.com/file/d/146Wlv6D7RSiyhqTOpYMDmZ0Ly2762A5P/view?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between w-full p-5 bg-white text-black rounded-2xl font-bold hover:bg-neutral-200 transition-all active:scale-[0.98]"
@@ -342,7 +342,7 @@ export default function About() {
 
               <div className="pt-8">
                 <a 
-                  href="https://drive.google.com/file/d/1_SuFK_DAMcRUdBsvlzdUnYbH5penHkLD/view?usp=sharing" 
+                  href="https://drive.google.com/file/d/146Wlv6D7RSiyhqTOpYMDmZ0Ly2762A5P/view?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center cursor-target gap-2 text-lg font-medium text-white hover:text-white/80 transition-colors reveal-text"
