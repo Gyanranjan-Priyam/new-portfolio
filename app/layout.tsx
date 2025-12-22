@@ -7,7 +7,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import DockBar from "./_components/DockBar";
 import ClickSpark from "@/components/ClickSpark";
-import MobileBlocker from "./_components/MobileBlocker";
 import TargetCursor from "@/components/TargetCursor";
 
 const urbanist = Urbanist({
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Gyanranjan Priyam Portfolio",
     images: [
       {
-        url: "/og-image.png", // You should create this image in your public folder
+        url: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
         width: 1200,
         height: 630,
         alt: "Gyanranjan Priyam Portfolio",
@@ -69,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gyanranjan Priyam | Full Stack Developer",
     description: "Full Stack Developer specializing in Next.js, React, and modern web tech.",
-    images: ["/og-image.png"],
+    images: ["https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png"],
     creator: "@gr_priyam",
   },
   robots: {
@@ -86,12 +85,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo.png",
+        url: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
         sizes: "any",
       },
     ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    shortcut: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
+    apple: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
   },
   verification: {
     other: {
@@ -110,7 +109,7 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Gyanranjan Priyam",
     "url": "https://www.gyanranjanpriyam.tech",
-    "image": "https://www.gyanranjanpriyam.tech/logo.png",
+    "image": "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
     "sameAs": [
       "https://linkedin.com/in/gyanranjan-priyam",
       "https://github.com/Gyanranjan-Priyam",
@@ -132,7 +131,7 @@ export default function RootLayout({
     "url": "https://www.gyanranjanpriyam.tech",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.gyanranjanpriyam.tech/logo.png",
+      "url": "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
       "width": "512",
       "height": "512"
     },
