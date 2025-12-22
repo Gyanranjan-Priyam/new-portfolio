@@ -13,6 +13,7 @@ import {
   Twitter,
   Instagram,
   FileUser,
+
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,6 +26,7 @@ export default function DockBar() {
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -147,6 +149,10 @@ export default function DockBar() {
               <p>Instagram</p>
             </TooltipContent>
           </Tooltip>
+
+          {/* Separator */}
+          <div className="h-10 w-[1px] bg-border/40 mx-1"></div>
+
           <Tooltip>
             <TooltipTrigger asChild>
               <Link

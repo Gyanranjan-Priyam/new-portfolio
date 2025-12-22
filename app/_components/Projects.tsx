@@ -135,8 +135,10 @@ export default function Projects() {
       <div className="relative px-4 md:px-6">
         {/* --- MOBILE LAYOUT --- */}
         <div className="flex flex-col gap-16 md:hidden">
-          {projects.map((project, i) => (
-            <div key={i} className="group relative">
+          {projects.map((project, i) => {
+            const projectId = `project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}`;
+            return (
+              <div key={i} className="group relative" data-project={projectId}>
               {/* Project Card */}
               <div className="relative overflow-hidden rounded-2xl bg-neutral-900 border border-white/10 shadow-2xl">
                 {/* Image Area */}
@@ -191,17 +193,21 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
 
         {/* --- DESKTOP LAYOUT --- */}
         <div className="hidden md:block">
-          {projects.map((project, i) => (
-            <div 
-              key={i} 
-              className="project-card sticky top-0 h-screen flex items-center justify-center py-8"
-              style={{ zIndex: i + 1 }}
-            >
+          {projects.map((project, i) => {
+            const projectId = `project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}`;
+            return (
+              <div 
+                key={i} 
+                className="project-card sticky top-0 h-screen flex items-center justify-center py-8"
+                style={{ zIndex: i + 1 }}
+                data-project={projectId}
+              >
               <div 
                 className="card-inner relative w-full max-w-7xl h-[85vh] md:h-[80vh] bg-neutral-900 rounded-2xl md:rounded-3xl border border-white/10 overflow-hidden flex flex-col lg:flex-row shadow-2xl origin-top"
                 style={{ backgroundColor: project.color }}
@@ -253,7 +259,8 @@ export default function Projects() {
 
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>

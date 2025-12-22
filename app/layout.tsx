@@ -171,6 +171,7 @@ export default function RootLayout({
           >
             <DockBar />
             <TargetCursor/>
+
             {children}
           </ClickSpark>
       </body>
