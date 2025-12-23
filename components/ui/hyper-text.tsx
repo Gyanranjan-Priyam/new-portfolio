@@ -139,7 +139,7 @@ export function HyperText({
           <motion.span
             key={index}
             className={cn(letter === " " ? "w-3" : "")}
-            style={{ fontFamily: "var(--font-a)" }}
+            style={{ fontFamily: "var(--font-gta)" }}
           >
             {letter.toUpperCase()}
           </motion.span>

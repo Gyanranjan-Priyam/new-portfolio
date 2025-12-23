@@ -25,6 +25,11 @@ const mokoto = localFont({
   variable: "--font-mokoto",
 });
 
+const gta = localFont({
+  src: "../public/fonts/pricedown.otf",
+  variable: "--font-gta",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gyanranjanpriyam.tech"),
   title: {
@@ -147,7 +152,7 @@ export default function RootLayout({
   return (
     <html className="dark" lang="en" suppressHydrationWarning>
       <body
-        className={`${urbanist.variable} ${anonymousPro.variable} ${mokoto.variable} antialiased font-sans`}
+        className={`${urbanist.variable} ${anonymousPro.variable} ${mokoto.variable} ${gta.variable} antialiased font-sans`}
       >
           <script
             type="application/ld+json"

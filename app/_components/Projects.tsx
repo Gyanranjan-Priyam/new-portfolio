@@ -119,7 +119,7 @@ export default function Projects() {
       <div className="container mx-auto px-6 md:px-12 mb-8 md:mb-10">
         <div className="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-12">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tighter leading-[0.9] header-reveal" style={{ fontFamily: "var(--font-a)" }}>
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tighter leading-[0.9] header-reveal" style={{ fontFamily: "var(--font-gta)" }}>
               Featured <br/> <span className="text-white/40 text-6xl">Projects.</span>
             </h1>
           </div>
@@ -165,7 +165,7 @@ export default function Projects() {
                 {/* Content Area */}
                 <div className="p-6 relative z-10 -mt-12">
                   <div className="bg-neutral-900/80 backdrop-blur-xl rounded-xl p-5 border border-white/5 shadow-lg">
-                    <h3 className="text-2xl font-bold mb-3 text-white" style={{ fontFamily: "var(--font-u)" }}>
+                    <h3 className="text-2xl font-bold mb-3 text-white" style={{ fontFamily: "var(--font-a)" }}>
                       {project.title}
                     </h3>
                     <p className="text-sm text-white/60 leading-relaxed mb-6 line-clamp-3">
@@ -224,7 +224,7 @@ export default function Projects() {
                       ))}
                     </div>
                     
-                    <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ fontFamily: "var(--font-u)" }}>
+                    <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ fontFamily: "var(--font-a)" }}>
                       {project.title}
                     </h3>
                     

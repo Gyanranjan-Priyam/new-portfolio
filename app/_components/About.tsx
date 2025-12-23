@@ -92,14 +92,14 @@ export default function About() {
         {/* Header Section */}
         <div className="mb-7 md:mb-10">
           <div className="overflow-hidden">
-            <h1 className="text-5xl md:text-7xl lg:text-5xl font-bold leading-[0.9] tracking-tight reveal-text" style={{ fontFamily: "var(--font-a" }}>
+            <h1 className="text-5xl md:text-7xl lg:text-5xl font-bold leading-[0.9] tracking-tight reveal-text" style={{ fontFamily: "var(--font-gta" }}>
               About <span className="text-white/50">the</span>
             </h1>
           </div>
           <div className="overflow-hidden">
             <HyperText 
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight reveal-text" 
-            style={{ fontFamily: "var(--font-a" }}> 
+            style={{ fontFamily: "var(--font-a)" }}> 
               Developer.
             </HyperText>
           </div>
@@ -200,7 +200,7 @@ export default function About() {
           
           {/* Left Column: Image */}
           <div className="col-span-1 lg:col-span-5 relative">
-            <div ref={imageRef} className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-neutral-900 image-container">
+            <div ref={imageRef} className="relative aspect-[4/6] w-full overflow-hidden rounded-sm bg-neutral-900 image-container">
               <Image
                 src="https://res.cloudinary.com/dw47ib0sh/image/upload/v1763650481/zb9w1qqtmajfq8k12uuz.jpg"
                 alt="Gyanranjan Priyam"
@@ -246,10 +246,10 @@ export default function About() {
               className="text-white"
               style={{ fontFamily: "var(--font-a)" }}
             >
-              <p className="text-xl font-bold mb-3 underline">
+              <p className="text-2xl font-bold mb-3 underline">
                 Educational Background And achivements
               </p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-xl text-neutral-600 dark:text-neutral-400">
                 I had completed my{" "}
                 <Tooltip
                   containerClassName="text-white  cursor-target"
@@ -306,7 +306,7 @@ export default function About() {
               <p className="text-xl font-bold mb-3 underline">
                 Hobbies and Interest
               </p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-xl text-neutral-600 dark:text-neutral-400">
                 My hobbies include{" "}
                 <Tooltip
                   containerClassName="text-white cursor-target"
@@ -358,7 +358,7 @@ export default function About() {
 
         {/* Tech Stack / Logo Loop */}
         <div className="mt-32 border-t border-white/10 pt-16">
-           <p className="text-center text-sm text-white/40 uppercase tracking-widest mb-12 reveal-text">Technologies & Tools</p>
+           <p className="text-center text-sm text-white/40 uppercase tracking-widest mb-12 reveal-text" >Technologies & Tools</p>
            <div className="opacity-60 hover:opacity-100 transition-opacity duration-500">
              <div className="flex overflow-hidden whitespace-nowrap py-4 mask-image-gradient">
                 <div className="flex animate-marquee gap-16 items-center">

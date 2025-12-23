@@ -220,7 +220,7 @@ export default function Contact() {
             </div>
             
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold tracking-tighter leading-[0.9]" style={{ fontFamily: "var(--font-u)" }}>
+              <h2 className="text-4xl font-bold tracking-tighter leading-[0.9]" style={{ fontFamily: "var(--font-gta)" }}>
                 Let's build <br/> <span className="text-white/40">something great.</span>
               </h2>
               <p className="text-base text-white/60 leading-relaxed" style={{ fontFamily: "var(--font-a)" }}>
@@ -332,7 +332,7 @@ export default function Contact() {
               <h2 className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase contact-reveal">
                 Contact
               </h2>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] contact-reveal" style={{ fontFamily: "var(--font-u)" }}>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] contact-reveal" style={{ fontFamily: "var(--font-gta)" }}>
                 Let's work <br/> <span className="text-white/40">together.</span>
               </h1>
               <p className="text-lg text-white/60 max-w-md contact-reveal" style={{ fontFamily: "var(--font-a)" }}>
