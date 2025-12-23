@@ -94,7 +94,6 @@ export default function Footer() {
             
             <div className="text-center space-y-2">
               <p className="text-xs text-white/40">© {new Date().getFullYear()} Gyanranjan Priyam</p>
-              <p className="text-[10px] text-white/20 uppercase tracking-wider">Designed & Built with Next.js</p>
             </div>
           </div>
         </div>

@@ -89,14 +89,23 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: [{ url: "/logo.png", type: "image/png" }],
+    apple: [
+      { url: "/logo.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
       {
-        url: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
-        sizes: "any",
+        rel: "mask-icon",
+        url: "/logo.png",
       },
     ],
-    shortcut: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
-    apple: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
   },
+  manifest: "/site.webmanifest",
   verification: {
     other: {
       "msvalidate.01": "1178BCCD0F20BFE8F63DCAD6EAC35DB3",
