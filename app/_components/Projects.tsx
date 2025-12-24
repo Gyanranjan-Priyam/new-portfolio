@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -78,6 +78,15 @@ const projects = [
 
 export default function Projects() {
   const container = useRef<HTMLDivElement>(null);
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    setMousePosition({
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
 
   useGSAP(() => {
       const projects = gsap.utils.toArray<HTMLElement>(".project-row");
@@ -198,7 +207,7 @@ export default function Projects() {
         </div>
 
         {/* --- DESKTOP LAYOUT --- */}
-        <div className="hidden md:block">
+        <div className="hidden md:block" onMouseMove={handleMouseMove}>
           {projects.map((project, i) => {
             const projectId = `project-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}`;
             return (
@@ -246,7 +255,11 @@ export default function Projects() {
                 </div>
 
                 {/* Image Side */}
-                <div className="flex-1 relative h-64 lg:h-auto overflow-hidden bg-black/20">
+                <div 
+                  className="flex-1 relative h-64 lg:h-auto overflow-hidden bg-black/20"
+                  onMouseEnter={() => setHoveredImage(project.image)}
+                  onMouseLeave={() => setHoveredImage(null)}
+                >
                   <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-black/80 via-transparent to-transparent z-10" />
                   <Image
                     src={project.image}
@@ -262,6 +275,30 @@ export default function Projects() {
           );
           })}
         </div>
+
+        {/* Hover Preview - Desktop Only */}
+        {hoveredImage && (
+          <div 
+            className="hidden md:block fixed pointer-events-none z-[9999] transition-opacity duration-300"
+            style={{
+              left: `${mousePosition.x + 20}px`,
+              top: `${mousePosition.y + 20}px`,
+              transform: 'translate(0, -50%)'
+            }}
+          >
+            <div className="relative w-[500px] h-[350px] rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 bg-black/40 backdrop-blur-sm">
+              <Image
+                src={hoveredImage}
+                alt="Project preview"
+                fill
+                className="object-contain"
+                sizes="500px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
