@@ -1,25 +1,26 @@
 {
-  "name": "Gyanranjan Priyam | Full Stack Developer",
-  "short_name": "GR Priyam",
-  "description": "Portfolio of Gyanranjan Priyam - A Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies.",
-  "icons": [
-    {
-      "src": "/logo.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/logo.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "display": "standalone",
-  "orientation": "portrait",
-  "start_url": "/",
-  "scope": "/"
+   "name": "Gyanranjan Priyam | Full Stack Developer",
+   "short_name": "GR Priyam",
+   "icons": [
+      {
+         "src": "/android-chrome-192x192.png",
+         "sizes": "192x192",
+         "type": "image/png"
+      },
+      {
+         "src": "/android-chrome-512x512.png",
+         "sizes": "512x512",
+         "type": "image/png"
+      },
+      {
+         "src": "/logo.png",
+         "sizes": "512x512",
+         "type": "image/png",
+         "purpose": "any maskable"
+      }
+   ],
+   "theme_color": "#000000",
+   "background_color": "#000000",
+   "display": "standalone",
+   "start_url": "/"
 }
