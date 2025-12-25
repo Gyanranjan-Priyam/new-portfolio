@@ -128,9 +128,9 @@ export default function Projects() {
       <div className="container mx-auto px-6 md:px-12 mb-8 md:mb-10">
         <div className="flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-12">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tighter leading-[0.9] header-reveal" style={{ fontFamily: "var(--font-gta)" }}>
+            <h2 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tighter leading-[0.9] header-reveal" style={{ fontFamily: "var(--font-gta)" }}>
               Featured <br/> <span className="text-white/40 text-6xl">Projects.</span>
-            </h1>
+            </h2>
           </div>
           <div className="mt-8 md:mt-0 max-w-sm text-right header-reveal">
             <p className="text-white/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-u)" }}>

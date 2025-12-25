@@ -332,9 +332,9 @@ export default function Contact() {
               <h2 className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase contact-reveal">
                 Contact
               </h2>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] contact-reveal" style={{ fontFamily: "var(--font-gta)" }}>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] contact-reveal" style={{ fontFamily: "var(--font-gta)" }}>
                 Let's work <br/> <span className="text-white/40">together.</span>
-              </h1>
+              </h2>
               <p className="text-lg text-white/60 max-w-md contact-reveal" style={{ fontFamily: "var(--font-a)" }}>
                 I'm currently available for freelance work and open to full-time opportunities. If you have a project that needs some creative touch, let's chat.
               </p>

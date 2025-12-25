@@ -92,9 +92,9 @@ export default function About() {
         {/* Header Section */}
         <div className="mb-7 md:mb-10">
           <div className="overflow-hidden">
-            <h1 className="text-5xl md:text-7xl lg:text-5xl font-bold leading-[0.9] tracking-tight reveal-text" style={{ fontFamily: "var(--font-gta" }}>
+            <h2 className="text-5xl md:text-7xl lg:text-5xl font-bold leading-[0.9] tracking-tight reveal-text" style={{ fontFamily: "var(--font-gta" }}>
               About <span className="text-white/50">the</span>
-            </h1>
+            </h2>
           </div>
           <div className="overflow-hidden">
             <HyperText 

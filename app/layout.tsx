@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     default: "Gyanranjan Priyam | Full Stack Developer",
     template: "%s | Gyanranjan Priyam"
   },
-  description: "Portfolio of Gyanranjan Priyam - A Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies. Building scalable and user-centric digital experiences.",
+  description: "Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies. Building scalable and user-centric digital experiences.",
   keywords: [
     "Gyanranjan Priyam",
     "Full Stack Developer",
