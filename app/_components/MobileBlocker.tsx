@@ -34,12 +34,12 @@ export default function MobileBlocker() {
             priority
           />
         </div>
-        <h1 
+        <h2 
           className="text-3xl font-bold text-white mb-4"
           style={{ fontFamily: "var(--font-accent)" }}
         >
           Desktop Only
-        </h1>
+        </h2>
         <p className="text-white/90 text-lg leading-relaxed mb-6">
           This portfolio is optimized for desktop viewing to provide the best experience with animations and interactions.
         </p>
