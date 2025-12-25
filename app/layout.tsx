@@ -147,7 +147,7 @@ export default function RootLayout({
     "url": "https://www.gyanranjanpriyam.tech",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
+      "url": "https://www.gyanranjanpriyam.tech/logo.png",
       "width": "512",
       "height": "512"
     },
@@ -157,7 +157,7 @@ export default function RootLayout({
       "https://x.com/gr_priyam",
       "https://instagram.com/gyanranjanpriyam"
     ],
-    "description": "Portfolio of Gyanranjan Priyam - Full Stack Developer specializing in modern web technologies."
+    "description": "Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies."
   };
 
   return (
@@ -168,10 +168,6 @@ export default function RootLayout({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
           />
           <script
             type="application/ld+json"
