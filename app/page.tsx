@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import AnimateLoader from "@/components/Loader";
 import HeroSection from "./_components/HeroSection";
-import LoaderCounter from "@/components/LoaderCounter";
 import HomeProjectsPage from "./_components/Projects";
 import HomeAboutPage from "./_components/About";
 import Contact from "./_components/Contact";
@@ -35,7 +34,6 @@ export default function Home() {
           <div ref={loaderRef}>
             <AnimateLoader />
           </div>
-          {isLoading && <LoaderCounter onComplete={handleLoadingComplete} />}
         </>
       )}
       <div className="min-h-screen text-foreground">
