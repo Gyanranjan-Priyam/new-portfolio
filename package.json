@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "build:cloudflare": "npx @cloudflare/next-on-pages",
-    "preview:cloudflare": "npm run build:cloudflare && npx wrangler pages dev",
-    "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy",
+    "preview:cloudflare": "npm run build:cloudflare && npx wrangler pages dev .vercel/output/static",
+    "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy .vercel/output/static",
     "start": "next start",
     "lint": "eslint"
   },
