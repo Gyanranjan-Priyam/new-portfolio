@@ -14,13 +14,6 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ['image/webp'],
   },
-  // Cloudflare Pages compatibility
-  ...(process.env.CF_PAGES && {
-    output: 'export',
-    images: {
-      unoptimized: true,
-    },
-  }),
 };
 
 export default nextConfig;
