@@ -31,12 +31,9 @@ const gta = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.gyanranjanpriyam.tech"),
-  title: {
-    default: "Gyanranjan Priyam | Full Stack Developer",
-    template: "%s | Gyanranjan Priyam"
-  },
-  description: "Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies. Building scalable and user-centric digital experiences.",
+  metadataBase: new URL("https://gyanranjanpriyam.tech"),
+  title: "Gyanranjan Priyam",
+  description: "Full Stack Developer working at the intersection of web development, app development, and AI/ML to build scalable digital products people actually use.",
   keywords: [
     "Gyanranjan Priyam",
     "Full Stack Developer",
@@ -54,25 +51,25 @@ export const metadata: Metadata = {
   authors: [{ name: "Gyanranjan Priyam", url: "https://github.com/Gyanranjan-Priyam" }],
   creator: "Gyanranjan Priyam",
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "en_US",
-    url: "https://www.gyanranjanpriyam.tech",
-    title: "Gyanranjan Priyam | Full Stack Developer",
-    description: "Explore the portfolio of Gyanranjan Priyam, a Full Stack Developer crafting exceptional digital experiences with modern web technologies.",
-    siteName: "Gyanranjan Priyam Portfolio",
+    url: "https://gyanranjanpriyam.tech",
+    title: "Gyanranjan Priyam",
+    description: "Full Stack Developer working at the intersection of web development, app development, and AI/ML to build scalable digital products people actually use.",
+    siteName: "Gyanranjan Priyam",
     images: [
       {
         url: "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
         width: 1200,
         height: 630,
-        alt: "Gyanranjan Priyam Portfolio",
+        alt: "Gyanranjan Priyam",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gyanranjan Priyam | Full Stack Developer",
-    description: "Full Stack Developer specializing in Next.js, React, and modern web tech.",
+    title: "Gyanranjan Priyam",
+    description: "Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies.",
     images: ["https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png"],
     creator: "@gr_priyam",
   },
@@ -124,40 +121,30 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Gyanranjan Priyam",
-    "url": "https://www.gyanranjanpriyam.tech",
+    "url": "https://gyanranjanpriyam.tech",
     "image": "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
     "sameAs": [
-      "https://linkedin.com/in/gyanranjan-priyam",
-      "https://github.com/Gyanranjan-Priyam",
-      "https://x.com/gr_priyam",
-      "https://instagram.com/gyanranjanpriyam"
+      "https://instagram.com/gyanranjanpriyam",
+      "https://linkedin.com/in/gyanranjan-priyam"
     ],
     "jobTitle": "Full Stack Developer",
     "worksFor": {
       "@type": "Organization",
       "name": "Freelance"
     },
-    "description": "Full Stack Developer specializing in Next.js, React, TypeScript, and modern web technologies."
+    "description": "Full Stack Developer working at the intersection of web development, app development, and AI/ML to build scalable digital products people actually use."
   };
 
-  const organizationSchema = {
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "WebSite",
     "name": "Gyanranjan Priyam",
-    "url": "https://www.gyanranjanpriyam.tech",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://res.cloudinary.com/dw47ib0sh/image/upload/v1766402986/ls67mu0pkqalizjmvuyf.png",
-      "width": "512",
-      "height": "512"
-    },
-    "sameAs": [
-      "https://linkedin.com/in/gyanranjan-priyam",
-      "https://github.com/Gyanranjan-Priyam",
-      "https://x.com/gr_priyam",
-      "https://instagram.com/gyanranjanpriyam"
-    ],
-    "description": "Portfolio of Gyanranjan Priyam - Full Stack Developer specializing in modern web technologies."
+    "url": "https://gyanranjanpriyam.tech",
+    "description": "Personal website and portfolio of Gyanranjan Priyam",
+    "author": {
+      "@type": "Person",
+      "name": "Gyanranjan Priyam"
+    }
   };
 
   return (
@@ -171,11 +158,7 @@ export default function RootLayout({
           />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
           />
           {/* <MobileBlocker /> */}
           <ClickSpark
