@@ -152,7 +152,6 @@ export default function RootLayout({
     <html className="dark" lang="en" suppressHydrationWarning>
       <head>
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=G-7Q67DBX3LE"
           strategy="afterInteractive"
         />
