@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { 
   Urbanist,
   Anonymous_Pro
@@ -192,6 +193,7 @@ export default function RootLayout({
 
             {children}
           </ClickSpark>
+          <Analytics />
       </body>
     </html>
   );
