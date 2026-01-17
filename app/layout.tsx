@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { 
   Urbanist,
   Anonymous_Pro
@@ -149,6 +150,25 @@ export default function RootLayout({
 
   return (
     <html className="dark" lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7Q67DBX3LE"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7Q67DBX3LE');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${urbanist.variable} ${anonymousPro.variable} ${mokoto.variable} ${gta.variable} antialiased font-sans`}
       >
