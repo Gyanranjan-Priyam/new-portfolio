@@ -13,16 +13,19 @@ import {
   Twitter,
   Instagram,
   FileUser,
-
+  Sun,
+  Moon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 
 export default function DockBar() {
   const pathname = usePathname();
   const router = useRouter();
+  const { resolvedTheme, setTheme } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -150,8 +153,26 @@ export default function DockBar() {
             </TooltipContent>
           </Tooltip>
 
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <DockIcon
+                className="hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer"
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+              >
+                {resolvedTheme === "dark" ? (
+                  <Sun className="w-6 h-6 transition-transform duration-300 hover:scale-110" />
+                ) : (
+                  <Moon className="w-6 h-6 transition-transform duration-300 hover:scale-110" />
+                )}
+              </DockIcon>
+            </TooltipTrigger>
+            <TooltipContent side="top" sideOffset={15}>
+              <p>{resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}</p>
+            </TooltipContent>
+          </Tooltip>
+
           {/* Separator */}
-          <div className="h-10 w-[1px] bg-border/40 mx-1"></div>
+          <div className="h-10 w-px bg-border/40 mx-1"></div>
 
           <Tooltip>
             <TooltipTrigger asChild>

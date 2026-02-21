@@ -206,7 +206,7 @@ export default function Contact() {
   }, { scope: container });
 
   return (
-    <section id="contact" ref={container} className="relative bg-black text-white py-24 md:py-32 overflow-hidden">
+    <section id="contact" ref={container} className="relative bg-t-bg text-t-fg py-24 md:py-32 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* --- MOBILE LAYOUT --- */}
         <div className="flex flex-col gap-12 md:hidden">
@@ -221,28 +221,28 @@ export default function Contact() {
             
             <div className="space-y-4">
               <h2 className="text-4xl font-bold tracking-tighter leading-[0.9]" style={{ fontFamily: "var(--font-gta)" }}>
-                Let's build <br/> <span className="text-white/40">something great.</span>
+                Let's build <br/> <span className="text-t-fg/40">something great.</span>
               </h2>
-              <p className="text-base text-white/60 leading-relaxed" style={{ fontFamily: "var(--font-a)" }}>
+              <p className="text-base text-t-fg/60 leading-relaxed" style={{ fontFamily: "var(--font-a)" }}>
                 Got a project in mind? I'm ready to help you take it to the next level.
               </p>
             </div>
           </div>
 
           <div className="space-y-4">
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+            <div className="p-6 rounded-2xl bg-t-fg/5 border border-t-fg/10 space-y-4">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-full bg-t-fg/10 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-t-fg" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase tracking-wider">Email me at</p>
-                  <p className="text-sm font-medium text-white">contact.gyanranjan@gmail.com</p>
+                  <p className="text-xs text-t-fg/40 uppercase tracking-wider">Email me at</p>
+                  <p className="text-sm font-medium text-t-fg">contact.gyanranjan@gmail.com</p>
                 </div>
               </div>
               <a 
                 href="mailto:contact.gyanranjan@gmail.com"
-                className="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all flex items-center justify-center gap-2 text-sm font-medium"
+                className="w-full py-3 rounded-xl bg-t-fg/5 hover:bg-t-fg/10 border border-t-fg/5 hover:border-t-fg/20 transition-all flex items-center justify-center gap-2 text-sm font-medium"
               >
                 <Mail className="w-4 h-4" />
                 <span>Send Email</span>
@@ -260,16 +260,16 @@ export default function Contact() {
                   key={social.name} 
                   href={social.href} 
                   target="_blank" 
-                  className="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between gap-4 hover:bg-white/10 transition-colors"
+                  className="p-4 rounded-2xl bg-t-fg/5 border border-t-fg/10 flex flex-col justify-between gap-4 hover:bg-t-fg/10 transition-colors"
                  >
-                   <span className="text-sm font-medium text-white/60">{social.name}</span>
-                   <social.icon className="w-4 h-4 self-end text-white/40" />
+                   <span className="text-sm font-medium text-t-fg/60">{social.name}</span>
+                   <social.icon className="w-4 h-4 self-end text-t-fg/40" />
                  </Link>
                ))}
             </div>
           </div>
 
-          <div className="bg-neutral-900/50 backdrop-blur-sm p-6 rounded-3xl border border-white/10">
+          <div className="bg-t-surface/50 backdrop-blur-sm p-6 rounded-3xl border border-t-fg/10">
             <h3 className="text-lg font-medium mb-6">Send a message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input 
@@ -280,7 +280,7 @@ export default function Contact() {
                 placeholder="Name"
                 required
                 disabled={isSubmitting}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
+                className="w-full bg-t-fg/5 border border-t-fg/10 rounded-xl px-4 py-3 text-sm text-t-fg focus:outline-none focus:border-t-fg/30 transition-colors disabled:opacity-50"
               />
               <input 
                 type="email"
@@ -290,7 +290,7 @@ export default function Contact() {
                 placeholder="Email"
                 required
                 disabled={isSubmitting}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
+                className="w-full bg-t-fg/5 border border-t-fg/10 rounded-xl px-4 py-3 text-sm text-t-fg focus:outline-none focus:border-t-fg/30 transition-colors disabled:opacity-50"
               />
               <textarea 
                 rows={4}
@@ -300,7 +300,7 @@ export default function Contact() {
                 placeholder="Your message..."
                 required
                 disabled={isSubmitting}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/30 transition-colors resize-none disabled:opacity-50"
+                className="w-full bg-t-fg/5 border border-t-fg/10 rounded-xl px-4 py-3 text-sm text-t-fg focus:outline-none focus:border-t-fg/30 transition-colors resize-none disabled:opacity-50"
               />
               {submitStatus.type && (
                 <div className={`p-3 rounded-xl text-sm ${
@@ -314,7 +314,7 @@ export default function Contact() {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-white text-black font-medium py-3 rounded-xl hover:bg-white/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-t-accent text-t-accent-fg font-medium py-3 rounded-xl hover:bg-t-accent/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
                 <ArrowUpRight className="w-4 h-4" />
@@ -329,27 +329,27 @@ export default function Contact() {
           {/* Left Column: Info */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase contact-reveal">
+              <h2 className="text-sm font-medium tracking-[0.2em] text-t-fg/60 uppercase contact-reveal">
                 Contact
               </h2>
               <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] contact-reveal" style={{ fontFamily: "var(--font-gta)" }}>
-                Let's work <br/> <span className="text-white/40">together.</span>
+                Let's work <br/> <span className="text-t-fg/40">together.</span>
               </h2>
-              <p className="text-lg text-white/60 max-w-md contact-reveal" style={{ fontFamily: "var(--font-a)" }}>
+              <p className="text-lg text-t-fg/60 max-w-md contact-reveal" style={{ fontFamily: "var(--font-a)" }}>
                 I'm currently available for freelance work and open to full-time opportunities. If you have a project that needs some creative touch, let's chat.
               </p>
             </div>
 
             <div className="space-y-8 contact-reveal">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <Mail className="w-5 h-5 text-white" />
+                <div className="w-12 h-12 rounded-full bg-t-fg/5 flex items-center justify-center border border-t-fg/10">
+                  <Mail className="w-5 h-5 text-t-fg" />
                 </div>
                 <div>
-                  <p className="text-sm text-white/40 uppercase tracking-wider mb-1">Email</p>
+                  <p className="text-sm text-t-fg/40 uppercase tracking-wider mb-1">Email</p>
                   <a 
                     href="mailto:contact.gyanranjan@gmail.com"
-                    className="text-xl md:text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3 group cursor-target"
+                    className="text-xl md:text-2xl font-medium hover:text-t-fg/80 transition-colors flex items-center gap-3 group cursor-target"
                   >
                     contact.gyanranjan@gmail.com
                     <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -358,11 +358,11 @@ export default function Contact() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <MapPin className="w-5 h-5 text-white" />
+                <div className="w-12 h-12 rounded-full bg-t-fg/5 flex items-center justify-center border border-t-fg/10">
+                  <MapPin className="w-5 h-5 text-t-fg" />
                 </div>
                 <div>
-                  <p className="text-sm text-white/40 uppercase tracking-wider mb-1">Location</p>
+                  <p className="text-sm text-t-fg/40 uppercase tracking-wider mb-1">Location</p>
                   <p className="text-xl md:text-2xl font-medium">Nayagarh, India</p>
                 </div>
               </div>
@@ -376,7 +376,7 @@ export default function Contact() {
                  { name: 'X (Twitter)', href: 'https://x.com/gr_priyam' },
                  { name: 'Instagram', href: 'https://instagram.com/gyanranjanpriyam' }
                ].map((social) => (
-                 <Link key={social.name} href={social.href} target="_blank" className="text-white/60 hover:text-white transition-colors text-sm uppercase tracking-wider border-b border-transparent hover:border-white pb-1 cursor-target">
+                 <Link key={social.name} href={social.href} target="_blank" className="text-t-fg/60 hover:text-t-fg transition-colors text-sm uppercase tracking-wider border-b border-transparent hover:border-t-fg pb-1 cursor-target">
                    {social.name}
                  </Link>
                ))}
@@ -384,10 +384,10 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="bg-neutral-900/50 backdrop-blur-sm p-8 md:p-10 rounded-3xl border border-white/10 contact-reveal">
+          <div className="bg-t-surface/50 backdrop-blur-sm p-8 md:p-10 rounded-3xl border border-t-fg/10 contact-reveal">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm text-white/60 uppercase tracking-wider">Name</label>
+                <label htmlFor="name" className="text-sm text-t-fg/60 uppercase tracking-wider">Name</label>
                 <input 
                   type="text" 
                   id="name"
@@ -396,13 +396,13 @@ export default function Contact() {
                   onChange={handleInputChange}
                   required
                   disabled={isSubmitting}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
+                  className="w-full bg-t-fg/5 border border-t-fg/10 rounded-xl px-4 py-3 text-t-fg focus:outline-none focus:border-t-fg/30 transition-colors disabled:opacity-50"
                   placeholder="John Doe"
                 />
               </div>
               
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm text-white/60 uppercase tracking-wider">Email</label>
+                <label htmlFor="email" className="text-sm text-t-fg/60 uppercase tracking-wider">Email</label>
                 <input 
                   type="email" 
                   id="email"
@@ -411,13 +411,13 @@ export default function Contact() {
                   onChange={handleInputChange}
                   required
                   disabled={isSubmitting}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
+                  className="w-full bg-t-fg/5 border border-t-fg/10 rounded-xl px-4 py-3 text-t-fg focus:outline-none focus:border-t-fg/30 transition-colors disabled:opacity-50"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm text-white/60 uppercase tracking-wider">Message</label>
+                <label htmlFor="message" className="text-sm text-t-fg/60 uppercase tracking-wider">Message</label>
                 <textarea 
                   id="message"
                   name="message"
@@ -426,7 +426,7 @@ export default function Contact() {
                   rows={4}
                   required
                   disabled={isSubmitting}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors resize-none disabled:opacity-50"
+                  className="w-full bg-t-fg/5 border border-t-fg/10 rounded-xl px-4 py-3 text-t-fg focus:outline-none focus:border-t-fg/30 transition-colors resize-none disabled:opacity-50"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -444,7 +444,7 @@ export default function Contact() {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-white text-black font-medium py-4 rounded-xl hover:bg-white/90 transition-colors cursor-target flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-t-accent text-t-accent-fg font-medium py-4 rounded-xl hover:bg-t-accent/90 transition-colors cursor-target flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -465,13 +465,13 @@ export default function Contact() {
         >
           {/* Backdrop */}
           <div 
-            className="success-backdrop absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
+            className="success-backdrop absolute inset-0 bg-t-bg/80 backdrop-blur-md cursor-pointer"
             onClick={handleBackdropClick}
           />
           
           {/* Modal Content */}
           <div 
-            className="success-content relative bg-gradient-to-br from-neutral-900 to-black border border-white/10 rounded-3xl p-8 md:p-12 max-w-md w-full shadow-2xl cursor-default"
+            className="success-content relative bg-gradient-to-br from-t-surface to-t-bg border border-t-fg/10 rounded-3xl p-8 md:p-12 max-w-md w-full shadow-2xl cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Sparkles */}
@@ -500,10 +500,10 @@ export default function Contact() {
             
             {/* Text Content */}
             <div className="text-center space-y-4">
-              <h3 className="success-title text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-u)" }}>
+              <h3 className="success-title text-3xl md:text-4xl font-bold text-t-fg" style={{ fontFamily: "var(--font-u)" }}>
                 Message Sent!
               </h3>
-              <p className="success-subtitle text-lg text-white/70" style={{ fontFamily: "var(--font-a)" }}>
+              <p className="success-subtitle text-lg text-t-fg/70" style={{ fontFamily: "var(--font-a)" }}>
                 Thank you for reaching out! I'll get back to you as soon as possible.
               </p>
             </div>

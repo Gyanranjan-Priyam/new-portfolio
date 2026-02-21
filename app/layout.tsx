@@ -8,7 +8,8 @@ import {
 import localFont from "next/font/local";
 import "./globals.css";
 import DockBar from "./_components/DockBar";
-import ClickSpark from "@/components/ClickSpark";
+import ThemeClickSpark from "@/components/ThemeClickSpark";
+import { ThemeProvider } from "@/components/theme-provider";
 import TargetCursor from "@/components/TargetCursor";
 
 const urbanist = Urbanist({
@@ -150,7 +151,7 @@ export default function RootLayout({
   };
 
   return (
-    <html className="dark" lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7Q67DBX3LE"
@@ -172,6 +173,7 @@ export default function RootLayout({
       <body
         className={`${urbanist.variable} ${anonymousPro.variable} ${mokoto.variable} ${gta.variable} antialiased font-sans`}
       >
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -181,18 +183,13 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
           />
           {/* <MobileBlocker /> */}
-          <ClickSpark
-            sparkColor="#fff"
-            sparkSize={10}
-            sparkRadius={15}
-            sparkCount={8}
-            duration={400}
-          >
+          <ThemeClickSpark>
             <DockBar />
             <TargetCursor/>
 
             {children}
-          </ClickSpark>
+          </ThemeClickSpark>
+          </ThemeProvider>
           <Analytics />
       </body>
     </html>

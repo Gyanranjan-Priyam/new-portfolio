@@ -86,14 +86,14 @@ export default function About() {
   }, { scope: container });
 
   return (
-    <section id="about" ref={container} className="relative w-full bg-black text-white py-24 sm:py-32 overflow-hidden">
+    <section id="about" ref={container} className="relative w-full bg-t-bg text-t-fg py-24 sm:py-32 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Header Section */}
         <div className="mb-7 md:mb-10">
           <div className="overflow-hidden">
             <h2 className="text-5xl md:text-7xl lg:text-5xl font-bold leading-[0.9] tracking-tight reveal-text" style={{ fontFamily: "var(--font-gta" }}>
-              About <span className="text-white/50">the</span>
+              About <span className="text-t-fg/50">the</span>
             </h2>
           </div>
           <div className="overflow-hidden">
@@ -108,7 +108,7 @@ export default function About() {
         {/* --- MOBILE LAYOUT --- */}
         <div className="flex flex-col gap-8 md:hidden">
            {/* Mobile Image */}
-           <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
+           <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl border border-t-fg/10">
               <Image
                 src="https://res.cloudinary.com/dw47ib0sh/image/upload/v1763650481/zb9w1qqtmajfq8k12uuz.jpg"
                 alt="Gyanranjan Priyam"
@@ -117,11 +117,11 @@ export default function About() {
                 sizes="100vw"
               />
               {/* Overlay Info */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-t-bg via-t-bg/80 to-transparent">
                  <div className="flex justify-between items-end">
                     <div>
-                        <p className="text-xs font-mono text-white/60 mb-1">BASED IN INDIA</p>
-                        <h2 className="text-2xl font-bold text-white">Gyanranjan Priyam</h2>
+                        <p className="text-xs font-mono text-t-fg/60 mb-1">BASED IN INDIA</p>
+                        <h2 className="text-2xl font-bold text-t-fg">Gyanranjan Priyam</h2>
                     </div>
                  </div>
               </div>
@@ -130,50 +130,50 @@ export default function About() {
            {/* Mobile Bio */}
            <div className="space-y-8">
               <div className="space-y-4">
-                  <p className="text-lg text-white/90 leading-relaxed font-medium">
-                    I&apos;m <span className="text-white font-bold">Priyam</span>. An electrical engineering student and software developer focused on building seamless digital experiences.
+                  <p className="text-lg text-t-fg/90 leading-relaxed font-medium">
+                    I&apos;m <span className="text-t-fg font-bold">Priyam</span>. An electrical engineering student and software developer focused on building seamless digital experiences.
                   </p>
-                  <p className="text-sm text-white/60 leading-relaxed">
+                  <p className="text-sm text-t-fg/60 leading-relaxed">
                     I combine my engineering background with a passion for web technologies to create efficient, user-centric applications.
                   </p>
               </div>
 
               {/* Cards for Sections */}
               <div className="grid gap-4">
-                 <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
+                 <div className="bg-t-fg/5 p-6 rounded-2xl border border-t-fg/10 backdrop-blur-sm">
                     <div className="flex items-center gap-3 mb-4">
-                       <div className="p-2.5 bg-white/10 rounded-full"><Trophy className="w-5 h-5 text-white" /></div>
-                       <h3 className="font-bold text-white text-lg">Education</h3>
+                       <div className="p-2.5 bg-t-fg/10 rounded-full"><Trophy className="w-5 h-5 text-t-fg" /></div>
+                       <h3 className="font-bold text-t-fg text-lg">Education</h3>
                     </div>
-                    <ul className="space-y-3 text-sm text-neutral-400">
+                    <ul className="space-y-3 text-sm text-t-muted">
                        <li className="flex gap-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-t-fg/40 mt-2 shrink-0" />
                           <span>B.Tech in Electrical Engineering, GCE Kalahandi</span>
                        </li>
                        <li className="flex gap-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-t-fg/40 mt-2 shrink-0" />
                           <span>Topper of Divine Higher Secondary School (2020)</span>
                        </li>
                        <li className="flex gap-3">
-                          <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-2 shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-t-fg/40 mt-2 shrink-0" />
                           <span>Recipient of multiple merit scholarships</span>
                        </li>
                     </ul>
                  </div>
 
-                 <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
+                 <div className="bg-t-fg/5 p-6 rounded-2xl border border-t-fg/10 backdrop-blur-sm">
                     <div className="flex items-center gap-3 mb-4">
-                       <div className="p-2.5 bg-white/10 rounded-full"><Rocket className="w-5 h-5 text-white" /></div>
-                       <h3 className="font-bold text-white text-lg">Interests</h3>
+                       <div className="p-2.5 bg-t-fg/10 rounded-full"><Rocket className="w-5 h-5 text-t-fg" /></div>
+                       <h3 className="font-bold text-t-fg text-lg">Interests</h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
                         {["Web Development", "Reading", "Research", "Technology", "Design"].map((tag) => (
-                            <span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-white/80 border border-white/5">
+                            <span key={tag} className="px-3 py-1 rounded-full bg-t-fg/10 text-xs font-medium text-t-fg/80 border border-t-fg/5">
                                 {tag}
                             </span>
                         ))}
                     </div>
-                    <p className="mt-4 text-sm text-neutral-400 leading-relaxed">
+                    <p className="mt-4 text-sm text-t-muted leading-relaxed">
                        I enjoy exploring different genres of literature and continuously learning through reading and hands-on projects.
                     </p>
                  </div>
@@ -184,7 +184,7 @@ export default function About() {
                   href="https://drive.google.com/file/d/146Wlv6D7RSiyhqTOpYMDmZ0Ly2762A5P/view?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full p-5 bg-white text-black rounded-2xl font-bold hover:bg-neutral-200 transition-all active:scale-[0.98]"
+                  className="flex items-center justify-between w-full p-5 bg-t-accent text-t-accent-fg rounded-2xl font-bold hover:bg-t-accent/80 transition-all active:scale-[0.98]"
               >
                   <span className="flex items-center gap-2">
                     <FileUser className="w-5 h-5" />
@@ -200,7 +200,7 @@ export default function About() {
           
           {/* Left Column: Image */}
           <div className="col-span-1 lg:col-span-5 relative">
-            <div ref={imageRef} className="relative aspect-[4/6] w-full overflow-hidden rounded-sm bg-neutral-900 image-container">
+            <div ref={imageRef} className="relative aspect-[4/6] w-full overflow-hidden rounded-sm bg-t-surface image-container">
               <Image
                 src="https://res.cloudinary.com/dw47ib0sh/image/upload/v1763650481/zb9w1qqtmajfq8k12uuz.jpg"
                 alt="Gyanranjan Priyam"
@@ -208,9 +208,9 @@ export default function About() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
               />
-              <div className="absolute inset-0 bg-black/10" />
+              <div className="absolute inset-0 bg-t-bg/10" />
             </div>
-            <div className="mt-6 flex justify-between items-center text-sm text-white/60 font-mono">
+            <div className="mt-6 flex justify-between items-center text-sm text-t-fg/60 font-mono">
               <span>..................</span>
               <span>BASED IN INDIA</span>
             </div>
@@ -219,9 +219,9 @@ export default function About() {
           {/* Right Column: Bio & Stats */}
           <div className="col-span-1 lg:col-span-7 flex flex-col justify-between h-full">
             <div className="space-y-8">
-              <div className="h-px w-full bg-white/20 divider-line" />
+              <div className="h-px w-full bg-t-fg/20 divider-line" />
               <div
-            className="text-sm text-white text-left sm:text-base md:text-lg lg:text-xl xl:text-xl leading-relaxed space-y-1 mt-4"
+            className="text-sm text-t-fg text-left sm:text-base md:text-lg lg:text-xl xl:text-xl leading-relaxed space-y-1 mt-4"
             style={{ fontFamily: "var(--font-accent)" }}
           >
             <span className="flex text-left items-center justify-start gap-4">
@@ -243,30 +243,30 @@ export default function About() {
           </div>
           <div className="flex flex-col">
             <span
-              className="text-white"
+              className="text-t-fg"
               style={{ fontFamily: "var(--font-a)" }}
             >
               <p className="text-2xl font-bold mb-3 underline">
                 Educational Background And achivements
               </p>
-              <p className="text-xl text-neutral-600 dark:text-neutral-400">
+              <p className="text-xl text-t-muted">
                 I had completed my{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-target"
+                  containerClassName="text-t-fg  cursor-target"
                   content="Intermediate Completed from Divine HSS, Nayagarh, Odisha with 85 percentage mark from Science stream under CHSE Board."
                 >
                   <span className="font-bold">intermediate</span>
                 </Tooltip>{" "}
                 with first division and also topper of the{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-target"
+                  containerClassName="text-t-fg  cursor-target"
                   content="Divine Higher Secondary School, Nayagarh Odisha"
                 >
                   <span className="font-bold">College</span>
                 </Tooltip>{" "}
                 in 2020. Currently, I am pursuing my{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-target"
+                  containerClassName="text-t-fg  cursor-target"
                   content="Bachelor of Technology in Electrical Engineering from Government College of Engineering, Kalahandi, Bhawanipatna, Odisha under BPUT University."
                 >
                   <span className="font-bold">B.Tech</span>
@@ -274,7 +274,7 @@ export default function About() {
                 from Government College of Engineering, Kalahandi. I have also
                 achieved{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-target"
+                  containerClassName="text-t-fg  cursor-target"
                   content="Secured 2nd position in District Level Science Exhibition held at Nayagarh in 2019."
                 >
                   <span className="font-bold">various prizes</span>
@@ -282,7 +282,7 @@ export default function About() {
                 in the field of science and technology during my school and
                 college time. Also I have achived various State level{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-target"
+                  containerClassName="text-t-fg  cursor-target"
                   content=" Awarded Meritious Scholarships by the Government of Odisha for academic excellence in 2015 and 2016. Along with this I have also get NRTS Scholarship for the year 2019."
                 >
                   <span className="cursor-target font-bold">
@@ -291,7 +291,7 @@ export default function About() {
                 </Tooltip>{" "}
                 and{" "}
                 <Tooltip
-                  containerClassName="text-white  cursor-target"
+                  containerClassName="text-t-fg  cursor-target"
                   content=" Awarded 1st Prize in Quiz District Level held at Nayagarh in 2018."
                 >
                   <span className="cursor-target font-bold">Prizes</span>
@@ -300,23 +300,23 @@ export default function About() {
               </p>
             </span>
             <span
-              className="text-white mt-10"
+              className="text-t-fg mt-10"
               style={{ fontFamily: "var(--font-a)" }}
             >
               <p className="text-xl font-bold mb-3 underline">
                 Hobbies and Interest
               </p>
-              <p className="text-xl text-neutral-600 dark:text-neutral-400">
+              <p className="text-xl text-t-muted">
                 My hobbies include{" "}
                 <Tooltip
-                  containerClassName="text-white cursor-target"
+                  containerClassName="text-t-fg cursor-target"
                   content="I enjoy reading a wide range of books that help me expand my imagination, improve my thinking, and gain new perspectives."
                 >
                   <span className="font-bold">reading books</span>
                 </Tooltip>{" "}
                 and{" "}
                 <Tooltip
-                  containerClassName="text-white cursor-target"
+                  containerClassName="text-t-fg cursor-target"
                   content="I love building websites, learning new web technologies, and improving my development skills through hands-on projects."
                 >
                   <span className="font-bold">web development</span>
@@ -328,7 +328,7 @@ export default function About() {
                 <br />
                 <br />I also have a strong interest in{" "}
                 <Tooltip
-                  containerClassName="text-white cursor-target"
+                  containerClassName="text-t-fg cursor-target"
                   content="I am passionate about exploring new topics, learning about emerging fields, and conducting research to expand my understanding."
                 >
                   <span className="font-bold">research</span>
@@ -345,7 +345,7 @@ export default function About() {
                   href="https://drive.google.com/file/d/146Wlv6D7RSiyhqTOpYMDmZ0Ly2762A5P/view?usp=sharing" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center cursor-target gap-2 text-lg font-medium text-white hover:text-white/80 transition-colors reveal-text"
+                  className="group inline-flex items-center cursor-target gap-2 text-lg font-medium text-t-fg hover:text-t-fg/80 transition-colors reveal-text"
                 >
                 <FileUser className="w-5 h-5" />
                   Download Resume
@@ -357,16 +357,16 @@ export default function About() {
         </div>
 
         {/* Tech Stack / Logo Loop */}
-        <div className="mt-32 border-t border-white/10 pt-16">
-           <p className="text-center text-sm text-white/40 uppercase tracking-widest mb-12 reveal-text" >Technologies & Tools</p>
+        <div className="mt-32 border-t border-t-fg/10 pt-16">
+           <p className="text-center text-sm text-t-fg/40 uppercase tracking-widest mb-12 reveal-text" >Technologies & Tools</p>
            <div className="opacity-60 hover:opacity-100 transition-opacity duration-500">
              <div className="flex overflow-hidden whitespace-nowrap py-4 mask-image-gradient">
                 <div className="flex animate-marquee gap-16 items-center">
                    {["React", "Next.js", "TypeScript", "GSAP", "Node.js", "GraphQL", "AWS", "Tailwind", "Figma", "Three.js", "WebGL"].map((tech, i) => (
-                      <span key={i} className="text-2xl md:text-4xl font-bold text-white/20 uppercase font-mono">{tech}</span>
+                      <span key={i} className="text-2xl md:text-4xl font-bold text-t-fg/20 uppercase font-mono">{tech}</span>
                    ))}
                    {["React", "Next.js", "TypeScript", "GSAP", "Node.js", "GraphQL", "AWS", "Tailwind", "Figma", "Three.js", "WebGL"].map((tech, i) => (
-                      <span key={`dup-${i}`} className="text-2xl md:text-4xl font-bold text-white/20 uppercase font-mono">{tech}</span>
+                      <span key={`dup-${i}`} className="text-2xl md:text-4xl font-bold text-t-fg/20 uppercase font-mono">{tech}</span>
                    ))}
                 </div>
              </div>

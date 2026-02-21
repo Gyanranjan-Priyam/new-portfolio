@@ -38,7 +38,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-t-bg text-t-fg border-t border-t-fg/10 pt-20 pb-10">
       <div className="container mx-auto px-6 md:px-12">
         {/* --- MOBILE LAYOUT --- */}
         <div className="flex flex-col gap-12 md:hidden">
@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold tracking-widest" style={{ fontFamily: "var(--font-mokoto)" }}>Gyanranjan Priyam</span>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed" style={{fontFamily: "var(--font-a)"}}>
+            <p className="text-t-fg/60 text-sm leading-relaxed" style={{fontFamily: "var(--font-a)"}}>
               Crafting digital experiences with code and creativity. Focused on scalable, accessible web apps.
             </p>
           </div>
@@ -58,11 +58,11 @@ export default function Footer() {
           {/* Navigation & Socials */}
           <div className="grid grid-cols-2 gap-x-4 gap-y-8">
             <div className="space-y-4">
-              <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/40">Menu</h3>
+              <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-t-fg/40">Menu</h3>
               <ul className="space-y-3">
                 {navLinks.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} onClick={(e) => handleScroll(e, link.href)} className="text-sm text-white/80 hover:text-white block py-1">
+                    <Link href={link.href} onClick={(e) => handleScroll(e, link.href)} className="text-sm text-t-fg/80 hover:text-t-fg block py-1">
                       {link.name}
                     </Link>
                   </li>
@@ -71,10 +71,10 @@ export default function Footer() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/40">Connect</h3>
+              <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-t-fg/40">Connect</h3>
               <div className="flex flex-col gap-3">
                 {socialLinks.map((social) => (
-                  <Link key={social.name} href={social.href} target="_blank" className="text-sm text-white/80 hover:text-white flex items-center gap-2 py-1">
+                  <Link key={social.name} href={social.href} target="_blank" className="text-sm text-t-fg/80 hover:text-t-fg flex items-center gap-2 py-1">
                     {social.name}
                   </Link>
                 ))}
@@ -83,17 +83,17 @@ export default function Footer() {
           </div>
 
           {/* Bottom Actions */}
-          <div className="pt-8 border-t border-white/10 space-y-6">
+          <div className="pt-8 border-t border-t-fg/10 space-y-6">
             <button 
               onClick={scrollToTop}
-              className="w-full py-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-2 text-sm font-medium hover:bg-white/10 transition-colors"
+              className="w-full py-4 rounded-xl bg-t-fg/5 border border-t-fg/10 flex items-center justify-center gap-2 text-sm font-medium hover:bg-t-fg/10 transition-colors"
             >
               Back to Top
               <ArrowUp className="w-4 h-4" />
             </button>
             
             <div className="text-center space-y-2">
-              <p className="text-xs text-white/40">© {new Date().getFullYear()} Gyanranjan Priyam</p>
+              <p className="text-xs text-t-fg/40">© {new Date().getFullYear()} Gyanranjan Priyam</p>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function Footer() {
               <h2 className="text-2xl font-bold tracking-widest" style={{ fontFamily: "var(--font-mokoto)" }}>
                 Gyanranjan Priyam
               </h2>
-              <p className="text-white/60 max-w-sm leading-relaxed" style={{fontFamily: "var(--font-a)"}}>
+              <p className="text-t-fg/60 max-w-sm leading-relaxed" style={{fontFamily: "var(--font-a)"}}>
                 Crafting digital experiences with code and creativity. 
                 Full Stack Developer focused on building scalable, accessible, and performant web applications.
               </p>
@@ -125,7 +125,7 @@ export default function Footer() {
 
             {/* Navigation */}
             <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-white/40 mb-6">
+              <h3 className="text-sm font-medium uppercase tracking-wider text-t-fg/40 mb-6">
                 Navigation
               </h3>
               <ul className="space-y-4">
@@ -134,7 +134,7 @@ export default function Footer() {
                     <Link 
                       href={link.href} 
                       onClick={(e) => handleScroll(e, link.href)}
-                      className="text-white/60 cursor-target hover:text-white transition-colors"
+                      className="text-t-fg/60 cursor-target hover:text-t-fg transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
 
             {/* Socials */}
             <div>
-              <h3 className="text-sm font-medium uppercase tracking-wider text-white/40 mb-6">
+              <h3 className="text-sm font-medium uppercase tracking-wider text-t-fg/40 mb-6">
                 Socials
               </h3>
               <ul className="space-y-4 ">
@@ -154,7 +154,7 @@ export default function Footer() {
                     <Link 
                       href={social.href}
                       target="_blank"
-                      className="flex items-center gap-3 text-white/60 hover:text-white transition-colors group"
+                      className="flex items-center gap-3 text-t-fg/60 hover:text-t-fg transition-colors group"
                     >
                       <social.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
                       {social.name}
@@ -166,17 +166,17 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex justify-between items-center pt-8 border-t border-white/10 gap-6">
-            <div className="flex items-center gap-8 text-sm text-white/40">
+          <div className="flex justify-between items-center pt-8 border-t border-t-fg/10 gap-6">
+            <div className="flex items-center gap-8 text-sm text-t-fg/40">
               <p>© {new Date().getFullYear()} Gyanranjan Priyam.</p>
             </div>
 
             <button 
               onClick={scrollToTop}
-              className="group flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors cursor-target"
+              className="group flex items-center gap-2 text-sm text-t-fg/60 hover:text-t-fg transition-colors cursor-target"
             >
               Back to Top
-              <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-t-fg/5 border border-t-fg/10 flex items-center justify-center group-hover:bg-t-fg/10 transition-colors">
                 <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </button>
